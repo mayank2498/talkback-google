@@ -26,10 +26,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 public interface SpeechController {
   /** Default stream for speech output. */
-  int DEFAULT_STREAM =
-      BuildVersionUtils.isAtLeastO()
-          ? AudioManager.STREAM_ACCESSIBILITY
-          : AudioManager.STREAM_MUSIC;
+  int DEFAULT_STREAM = AudioManager.STREAM_MUSIC;
 
   // Queue modes.
   int QUEUE_MODE_INTERRUPT = 0;

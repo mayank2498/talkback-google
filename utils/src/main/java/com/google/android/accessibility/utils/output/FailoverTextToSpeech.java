@@ -619,7 +619,7 @@ public class FailoverTextToSpeech {
 
     mTts.setAudioAttributes(
         new AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+            .setUsage(AudioAttributes.USAGE_UNKNOWN)
             .build());
 
     LogUtils.i(TAG, "Switched to TTS engine: %s", tempTtsEngine);

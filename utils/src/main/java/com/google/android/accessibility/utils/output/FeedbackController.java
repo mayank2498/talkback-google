@@ -239,7 +239,7 @@ public class FeedbackController {
   private static SoundPool createSoundPool() {
     AudioAttributes aa =
         new AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+            .setUsage(AudioAttributes.USAGE_UNKNOWN)
             .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
             .build();
     return new SoundPool.Builder().setMaxStreams(MAX_STREAMS).setAudioAttributes(aa).build();
