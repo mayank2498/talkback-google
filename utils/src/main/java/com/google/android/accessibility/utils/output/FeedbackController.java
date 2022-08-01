@@ -239,7 +239,7 @@ public class FeedbackController {
   private static SoundPool createSoundPool() {
     AudioAttributes aa =
         new AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_UNKNOWN)
+            .setUsage(AudioAttributes.USAGE_UNKNOWN) // ONLY AFTER THIS CHANGE, NAVIGATION SOUNDS GET CAPTURED IN 3'rd party apps
             .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
             .build();
     return new SoundPool.Builder().setMaxStreams(MAX_STREAMS).setAudioAttributes(aa).build();
