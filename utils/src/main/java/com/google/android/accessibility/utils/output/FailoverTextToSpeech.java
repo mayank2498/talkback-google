@@ -497,7 +497,7 @@ public class FailoverTextToSpeech {
     bundle.putFloat(SpeechParam.VOLUME, volume);
 
     ensureQueueFlush();
-    return mTts.speak(text, SPEECH_FLUSH_ALL, bundle, utteranceId);
+    return mTts.speak(text, TextToSpeech.QUEUE_ADD, bundle, utteranceId);
   }
 
   /**

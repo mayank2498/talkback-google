@@ -42,10 +42,7 @@ public class FeedbackController {
   private static final String TAG = "FeedbackController";
 
   /** Default stream for audio feedback. */
-  public static final int DEFAULT_STREAM =
-      BuildVersionUtils.isAtLeastO()
-          ? AudioManager.STREAM_ACCESSIBILITY
-          : AudioManager.STREAM_MUSIC;
+  public static final int DEFAULT_STREAM = AudioManager.STREAM_MUSIC;
 
   /** Maximum number of concurrent audio streams. */
   private static final int MAX_STREAMS = 10;
@@ -77,7 +74,7 @@ public class FeedbackController {
     this(context, createSoundPool(), (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE));
   }
 
-  public FeedbackController(Context context, SoundPool soundPool, Vibrator vibrator) {
+  public FeedbackController(Context context, SoundPool soundPool,Vibrator vibrator) {
     mContext = context;
     mResources = context.getResources();
     mSoundPool = soundPool;
@@ -239,7 +236,7 @@ public class FeedbackController {
   private static SoundPool createSoundPool() {
     AudioAttributes aa =
         new AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_UNKNOWN) // ONLY AFTER THIS CHANGE, NAVIGATION SOUNDS GET CAPTURED IN 3'rd party apps
+            .setUsage(AudioAttributes.USAGE_MEDIA) // ONLY AFTER THIS CHANGE, NAVIGATION SOUNDS GET CAPTURED IN 3'rd party apps
             .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
             .build();
     return new SoundPool.Builder().setMaxStreams(MAX_STREAMS).setAudioAttributes(aa).build();
