@@ -710,6 +710,10 @@ public class FailoverTextToSpeech {
     // This may be null if the user hasn't specified an engine.
     mDefaultTtsEngine = Secure.getString(resolver, Secure.TTS_DEFAULT_SYNTH);
 
+    // browserstack patch
+    // Hardcoding default TTS engine to com.google.android.tts since audio capture didn't work for other engines ( like com.samsung.SMT )
+    mDefaultTtsEngine = PACKAGE_GOOGLE_TTS;
+
     // Switch engines when the system default changes and it's not the current engine.
     if (mTtsEngine == null || !mTtsEngine.equals(mDefaultTtsEngine)) {
       if (mInstalledTtsEngines.contains(mDefaultTtsEngine)) {
