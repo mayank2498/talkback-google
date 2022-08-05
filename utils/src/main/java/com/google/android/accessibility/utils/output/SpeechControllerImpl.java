@@ -2035,7 +2035,7 @@ public class SpeechControllerImpl implements SpeechController {
               .setAudioAttributes(
                   new AudioAttributes.Builder()
                       .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-                      .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                      .setUsage(AudioAttributes.USAGE_UNKNOWN)
                       .build())
               .build()
           : null;
